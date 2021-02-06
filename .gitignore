@@ -1,0 +1,4 @@
+node_modules
+
+# Output directory for compiled typescript
+lib
