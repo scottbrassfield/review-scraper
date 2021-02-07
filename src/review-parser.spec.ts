@@ -1,9 +1,20 @@
-import { testReviewHtml, testRating, testDescription } from "./test/test-data"
+import {
+  testReviewHtml,
+  testRating,
+  testDescription,
+  testUser,
+  testDate,
+} from "./test/test-html"
 import { parseReviews } from "./review-parser"
 
 it("parseReviews should return parsed review objects with description and rating", () => {
   const actualReviews = parseReviews(testReviewHtml)
   expect(actualReviews).toEqual([
-    { description: testDescription, rating: testRating },
+    {
+      date: testDate,
+      description: testDescription,
+      rating: testRating,
+      user: testUser,
+    },
   ])
 })
