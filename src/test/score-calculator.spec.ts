@@ -1,7 +1,6 @@
 import { analyzeSentiment, calculatePositivityScore } from "../score-calculator"
+import { isNumber } from "../utils"
 import { testReviews } from "./test-data/test-reviews"
-
-const isNumber = (value: any) => typeof value === "number"
 
 it("analyzeSentiment should return a normalized sentiment score", () => {
   const [review] = testReviews

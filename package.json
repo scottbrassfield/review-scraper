@@ -8,6 +8,8 @@
     "dev": "ts-node-dev --respawn --clear src/index.ts ",
     "start": "node src/index.js",
     "test": "jest",
+    "test:all": "npm run test && npm run test:integration",
+    "test:integration": "jest --config jest.integration.config.js",
     "test:watch": "jest --watch"
   },
   "keywords": [],
@@ -15,10 +17,12 @@
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.5",
+    "got": "^9.6.0",
     "sentiment": "^5.0.2"
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.23",
+    "@types/got": "^9.6.11",
     "@types/sentiment": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^4.14.2",
     "@typescript-eslint/parser": "^4.14.2",
