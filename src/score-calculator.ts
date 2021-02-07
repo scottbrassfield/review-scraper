@@ -1,6 +1,10 @@
 import Sentiment from "sentiment"
 import { ParsedReview } from "./review-parser"
 
+export type ReviewWithScore = ParsedReview & {
+  positivityScore: number
+}
+
 export const analyzeSentiment = (text: string) => {
   const sentiment = new Sentiment()
   return sentiment.analyze(text).comparative
@@ -13,8 +17,15 @@ export const analyzeSentiment = (text: string) => {
  *
  * The rating and the sentiment are multiplied together to produce the "overall positivity" score
  */
-export const calculatePositivityScore = (review: ParsedReview) => {
-  const { description, rating } = review
+export const calculatePositivityScore = (
+  description: string,
+  rating: number
+) => {
   const sentimentScore = analyzeSentiment(description)
   return sentimentScore * rating
 }
+
+export const addScoreToReview = (review: ParsedReview): ReviewWithScore => ({
+  ...review,
+  positivityScore: calculatePositivityScore(review.description, review.rating),
+})
