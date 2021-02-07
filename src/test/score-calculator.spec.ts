@@ -2,8 +2,8 @@ import {
   addScoreToReview,
   analyzeSentiment,
   calculatePositivityScore,
-} from "../score-calculator"
-import { isNumber } from "../utils"
+} from "../modules/score-calculator"
+import { isNumber } from "../modules/utils"
 import { testReview } from "./test-data/test-reviews"
 
 it("analyzeSentiment should return a normalized sentiment score", () => {

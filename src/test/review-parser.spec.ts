@@ -5,7 +5,7 @@ import {
   testUser,
   testDate,
 } from "./test-data/test-html"
-import { parseReviews } from "../review-parser"
+import { parseReviews } from "../modules/review-parser"
 
 it("parseReviews should return parsed review objects with description and rating", () => {
   const actualReviews = parseReviews(testReviewHtml)

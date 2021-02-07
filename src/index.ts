@@ -1,7 +1,7 @@
 import { pageCount, reviewCount } from "./config"
-import { printReviewFetching, printReviews } from "./output"
-import { findTopReviews } from "./utils"
-import { fetchAndScoreReviews } from "./web-requester"
+import { printReviewFetching, printReviews } from "./modules/output"
+import { findTopReviews } from "./modules/utils"
+import { fetchAndScoreReviews } from "./modules/web-requester"
 
 const showTopPositiveReviews = async () => {
   printReviewFetching(pageCount)

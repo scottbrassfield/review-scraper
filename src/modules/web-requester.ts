@@ -1,7 +1,7 @@
 import got from "got"
 import { parseReviews } from "./review-parser"
 import { addScoreToReview } from "./score-calculator"
-import { pageCount, dealerUrl } from "./config"
+import { pageCount, dealerUrl } from "../config"
 
 export const fetchReviewPage = async (page: number) => {
   const { body } = await got(`${dealerUrl}/page${page}`)

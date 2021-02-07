@@ -1,6 +1,6 @@
-import { ReviewWithScore } from "../score-calculator"
-import { isString } from "../utils"
-import { fetchAndScoreReviews, fetchReviewPage } from "../web-requester"
+import { ReviewWithScore } from "../modules/score-calculator"
+import { isString } from "../modules/utils"
+import { fetchAndScoreReviews, fetchReviewPage } from "../modules/web-requester"
 
 it("fetchReviewPage should return an html page", async () => {
   const html = await fetchReviewPage(1)

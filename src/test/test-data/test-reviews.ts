@@ -1,5 +1,5 @@
-import type { ParsedReview } from "../../review-parser"
-import { ReviewWithScore } from "../../score-calculator"
+import type { ParsedReview } from "../../modules/review-parser"
+import { ReviewWithScore } from "../../modules/score-calculator"
 
 export const testReview: ParsedReview = {
   description: "This is the best thing I've ever!!!!! I loved it so much!!!",

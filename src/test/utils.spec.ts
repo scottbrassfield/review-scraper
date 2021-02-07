@@ -1,4 +1,4 @@
-import { findTopReviews, isNumber, isString } from "../utils"
+import { findTopReviews, isNumber, isString } from "../modules/utils"
 import { testReviewsWithScore } from "./test-data/test-reviews"
 
 describe("isNumber", () => {
