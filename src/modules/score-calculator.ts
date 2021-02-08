@@ -7,23 +7,26 @@ export type ReviewWithScore = ParsedReview & {
 
 export const analyzeSentiment = (text: string) => {
   const sentiment = new Sentiment()
-  return sentiment.analyze(text).comparative
+  return sentiment.analyze(text).score
 }
 
+export const countExclamations = (text: string) => text.match(/!/g)?.length ?? 0
+
+export const countCapitals = (text: string) => text.match(/[A-Z]/g)?.length ?? 0
+
 /**
- * Score is calculated based on two core factors:
- *  - Overall rating provided by the user (ranges from 00 to 50)
+ * Score is calculated by adding together the following factors:
+ *  - Overall rating provided by the user (ranges from 0 to 50)
  *  - Sentiment score of the review text (see https://github.com/thisandagain/sentiment)
+ *  - Number of exclamation points
+ *  - Number of capital letters
  *
- * The rating and the sentiment are multiplied together to produce the "overall positivity" score
  */
-export const calculatePositivityScore = (
-  description: string,
-  rating: number
-) => {
-  const sentimentScore = analyzeSentiment(description)
-  return sentimentScore * rating
-}
+export const calculatePositivityScore = (description: string, rating: number) =>
+  rating +
+  analyzeSentiment(description) +
+  countExclamations(description) +
+  countCapitals(description)
 
 export const addScoreToReview = (review: ParsedReview): ReviewWithScore => ({
   ...review,
