@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node-dev --respawn --clear src/index.ts ",
-    "start": "node src/index.js",
+    "start": "node lib/index.js",
     "test": "jest --config jest.unit.config.js",
     "test:all": "npm run test && npm run test:integration",
     "test:integration": "jest --config jest.integration.config.js",
