@@ -1,3 +1,8 @@
+/**
+ * This module contains functions used to calculate the "positivity score" that is used to
+ * sort and select the top-most positive reviews
+ */
+
 import Sentiment from "sentiment"
 import { ParsedReview } from "./review-parser"
 
@@ -20,7 +25,6 @@ export const countCapitals = (text: string) => text.match(/[A-Z]/g)?.length ?? 0
  *  - Sentiment score of the review text (see https://github.com/thisandagain/sentiment)
  *  - Number of exclamation points
  *  - Number of capital letters
- *
  */
 export const calculatePositivityScore = (description: string, rating: number) =>
   rating +

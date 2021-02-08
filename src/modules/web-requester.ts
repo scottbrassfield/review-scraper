@@ -1,3 +1,7 @@
+/**
+ * This module contains functions that involve making any web requests
+ */
+
 import got from "got"
 import { parseReviews } from "./review-parser"
 import { addScoreToReview } from "./score-calculator"
@@ -8,6 +12,10 @@ export const fetchReviewPage = async (page: number) => {
   return body
 }
 
+/**
+ * Handles fetching, parsing, and scoring review data in one function,
+ * to allow for fetching and processing multiple pages concurrently
+ */
 export const fetchAndScoreReviews = async () => {
   const fetchAndProcess = (_: any, idx: number) =>
     fetchReviewPage(idx + 1)

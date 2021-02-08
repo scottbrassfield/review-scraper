@@ -1,3 +1,7 @@
+/**
+ * This module contains the functions that handle printing data to the console
+ */
+
 import chalk from "chalk"
 import { ReviewWithScore } from "./score-calculator"
 
