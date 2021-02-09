@@ -2,12 +2,14 @@ module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
   collectCoverage: true,
-  collectCoverageFrom: ["<rootDir>/src/**/*.ts"],
+  collectCoverageFrom: ["<rootDir>/**/*.ts"],
+  coverageDirectory: "<rootDir>/test/coverage",
   coveragePathIgnorePatterns: [
     "/node_modules/",
-    "<rootDir>/src/test/",
-    "<rootDir>/src/modules/output.ts",
-    "<rootDir>/src/index.ts",
+    "<rootDir>/test/",
+    "<rootDir>/modules/output.ts",
+    "<rootDir>/config.ts",
   ],
   setupFilesAfterEnv: ["jest-extended"],
+  rootDir: "src",
 }

@@ -4,4 +4,4 @@ node_modules
 lib
 
 # Output directory for code coverage
-coverage
+src/test/coverage
