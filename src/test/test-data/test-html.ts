@@ -3,6 +3,8 @@ export const testRating = 50
 export const testDate = "February 06, 2021"
 export const testUser = "donnieb6680"
 
+export const testBadHtml = `<div>Bad html</div>`
+
 // Test html structure was copied from McKaig review page and is valid as of Feb 6, 2021
 // Changes to this structure could break the current implementation and should be monitored/updated if needed
 export const testReviewHtml = `

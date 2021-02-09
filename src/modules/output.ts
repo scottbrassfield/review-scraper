@@ -41,3 +41,8 @@ export const printReviews = (reviews: ReviewWithScore[]) => {
 
   reviews.forEach(printReview)
 }
+
+export const printError = (error: any) => {
+  console.log(chalk.red("\nUh oh, something went wrong. See details below:\n"))
+  console.log(error)
+}
